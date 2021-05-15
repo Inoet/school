@@ -18,8 +18,8 @@ public class Physics extends View {
         super(context);
         MyT t = new MyT(3456789,6);
         t.start();
-        bs.add(new Ball(220,220,200,Color.BLUE,Color.YELLOW, 6,6));
-        bs.add(new Ball(456,220, 150, Color.GREEN, Color.YELLOW, 3,3));
+        bs.add(new Ball(220f,220f,Color.BLUE,Color.YELLOW, 5f,6f,10f));
+        bs.add(new Ball(562f,562f, Color.GREEN, Color.YELLOW, 6f,3f,15f));
     }
 
     @Override
@@ -36,8 +36,7 @@ public class Physics extends View {
                 b.draw(canvas);
                 for(Ball b2 : bs){
                     b.distance(b2);
-                    b.crush(b2);
-                    b.stop(b2);
+                    b.bounced(b2);
                 }
             }
     }

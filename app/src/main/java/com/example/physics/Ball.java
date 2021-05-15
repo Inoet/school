@@ -5,26 +5,25 @@ import android.graphics.Paint;
 import android.util.Log;
 
 public class Ball {
-    int x, y, r, dx, dy;
+    float x, y, r, dx, dy;
     int bc, str;
-    int gx,gy;
-    int viewWidth, viewHeight;
-    int l;
-    int m;
+    float gx,gy;
+    float viewWidth, viewHeight;
+    float l;
+    public static float m;
     boolean touch = false;
-
-    public Ball(int x, int y, int r, int bc, int str, int dx, int dy){
+    public Ball(float x, float y, int bc, int str, float dx, float dy, float m){
         this.x = x;
         this.y = y;
-        this.r = r;
         this.bc = bc;
         this.str = str;
         this.dx = dx;
         this.dy = dy;
+        r = m*10;
         l = r/4;
-        gx = x + dx*l ;
-        gy = y + dy*l;
-        m = r/10;
+        gx = (float) (x + dx*l);
+        gy = (float) (y + dy*l);
+        this.m = m;
     }
 
     protected void draw(Canvas canvas) {
@@ -59,8 +58,8 @@ public class Ball {
     public void move(){
         x+=dx;
         y+=dy;
-        gx =x+dx*l ;
-        gy = y + dy*l;
+        gx = (float) (x+dx*l);
+        gy = (float) (y + dy*l);
     }
 
     public void distance(Ball b){
@@ -71,89 +70,16 @@ public class Ball {
         else touch = false;
     }
 
-    public void crush(Ball b) {
-        //расстояния между центрами
+    public void bounced(Ball b) {
         if (touch == true) {
-            b.dx = -b.dx;
-            b.dy = -b.dy;
-            dx = -dx;
-            dy = -dy;
-            /*if(b.dx>0 && dx>0 && b.dy>0 && dy>0){
-                if(x>b.x){
-                    dx += b.dx;
-                    b.dx = 0;
-                }
-                else{
-                    b.dx += dx;
-                    dx = 0;
-                }
-                if(y>b.y){
-                    dy += b.dy;
-                    b.dy = 0;
-                }
-                else{
-                    b.dy += dy;
-                    dy = 0;
-                }
-            }
-
-            if(b.dx>0 && dx>0 ){
-                if(x>b.x){
-                    dx += b.dx;
-                    b.dx = 0;
-                }
-                else{
-                    b.dx += dx;
-                    dx = 0;
-                }
-                if(y<b.y){
-                    dy += b.dy;
-                    b.dy = 0;
-                }
-                else{
-                    b.dy += dy;
-                    dy = 0;
-                }
-            }
-
-            else if(b.dx<0 && dx<0&& b.dy<0 && dy<0){
-                if(x<b.x){
-                    dx += b.dx;
-                    b.dx = 0;
-                }
-                else{
-                    b.dx += dx;
-                    dx = 0;
-                }
-                if(y<b.y){
-                    dy += b.dy;
-                    b.dy = 0;
-                }
-                else{
-                    b.dy += dy;
-                    dy = 0;
-                }
-            }
-        }
-    }*/
-
-
-        }
-    }
-    public void stop(Ball b){
-        while (touch == true){
-            if(dx == 0 && dy ==0){
-                dx = b.dx; dy = b.dy;
-                gx = b.gx; gy = b.gy;
-                b.dx = 0; b.dy = 0;
-                break;
-
-            }
-            else if(b.dx ==0 && b.dy ==0){
-                b.dx = dx; b.dy = dy;
-                dx = 0; dy = 0;
-
-            }
+            double vx1 = ((m - b.m) * dx + 2 * b.m * b.dx) / (m + b.m);
+            double vx2 = ((b.m - m) * b.dx + 2 * m * dx) / (m + b.m);
+            dx = (float) vx1;
+            b.dx = (float) vx2;
+            double vy1 = ((m - b.m) * dy + 2 * b.m * b.dy) / (m + b.m);
+            double vy2 = ((b.m - m) * b.dy + 2 * m * dy) / (m + b.m);
+            dy = (float) vy1;
+            b.dy = (float) vy2;
         }
     }
 }

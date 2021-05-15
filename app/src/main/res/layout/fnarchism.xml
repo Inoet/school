@@ -6,22 +6,41 @@
     android:gravity="center"
     >
 
-    <Button
-        android:id="@+id/b"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/massa"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bakunin" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/k"
-        android:text="Kropotkin"/>
-    <Button
+        android:hint="масса шара" />
+
+    <EditText
+        android:id="@+id/Vx"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/m"
-        android:text="Mahno"
-        />
+        android:hint="скорость по вертикали" />
+
+    <EditText
+        android:id="@+id/Vy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="скорость по горизонтали" />
+    <EditText
+        android:id="@+id/colr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="цвет" />
+
+    <Button
+        android:id="@+id/ball"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="добавить шар" />
+
+    <Button
+        android:id="@+id/start"
+        android:onClick="add"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="запустить" />
 
 
 </LinearLayout>
