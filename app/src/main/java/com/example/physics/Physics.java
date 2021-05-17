@@ -10,7 +10,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 public class Physics extends View {
-    ArrayList <Ball> bs = new ArrayList<>();
+    static ArrayList <Ball> bs = new ArrayList<>();
 
     int viewWidth, viewHeight;
 
@@ -18,8 +18,8 @@ public class Physics extends View {
         super(context);
         MyT t = new MyT(3456789,6);
         t.start();
-        bs.add(new Ball(220f,220f,Color.BLUE,Color.YELLOW, 5f,6f,10f));
-        bs.add(new Ball(562f,562f, Color.GREEN, Color.YELLOW, 6f,3f,15f));
+        //bs.add(new Ball(220f,220f,Color.BLUE,Color.YELLOW, 5f,6f,10f));
+        //bs.add(new Ball(562f,562f, Color.GREEN, Color.YELLOW, 6f,3f,15f));
     }
 
     @Override

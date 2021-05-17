@@ -6,35 +6,52 @@
     android:gravity="center"
     >
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Характеристики первого шара" />
+
     <EditText
         android:id="@+id/massa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="масса шара" />
+        android:hint="масса шара(m)" />
 
     <EditText
         android:id="@+id/Vx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="скорость по вертикали" />
+        android:hint="скорость по вертикали(Vx)" />
 
     <EditText
         android:id="@+id/Vy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="скорость по горизонтали" />
+        android:hint="скорость по горизонтали(Vy)" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="Характеристики второго шара" />
     <EditText
-        android:id="@+id/colr"
+        android:id="@+id/massa2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="цвет" />
+        android:hint="масса шара(m)" />
 
-    <Button
-        android:id="@+id/ball"
-        android:layout_width="190dp"
+    <EditText
+        android:id="@+id/Vx2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="добавить шар" />
+        android:hint="скорость по вертикали(Vx)" />
 
+    <EditText
+        android:id="@+id/Vy2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="скорость по горизонтали(Vy)" />
     <Button
         android:id="@+id/start"
         android:onClick="add"
