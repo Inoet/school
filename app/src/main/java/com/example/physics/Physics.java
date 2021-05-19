@@ -18,8 +18,6 @@ public class Physics extends View {
         super(context);
         MyT t = new MyT(3456789,6);
         t.start();
-        //bs.add(new Ball(220f,220f,Color.BLUE,Color.YELLOW, 5f,6f,10f));
-        //bs.add(new Ball(562f,562f, Color.GREEN, Color.YELLOW, 6f,3f,15f));
     }
 
     @Override

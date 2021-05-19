@@ -5,25 +5,36 @@ import android.graphics.Paint;
 import android.util.Log;
 
 public class Ball {
-    float x, y, r, dx, dy;
-    int bc, str;
+    float x;
+    float y;
+    float r;
+    float dx;
+    float dy;
+    float V;
+    float grad;
+    int bc;
+    int str;
     float gx,gy;
     float viewWidth, viewHeight;
     float l;
     public static float m;
     boolean touch = false;
-    public Ball(float x, float y, int bc, int str, float dx, float dy, float m){
+    public Ball(float x, float y, int bc, int str, float V, float grad, float m) {
         this.x = x;
         this.y = y;
         this.bc = bc;
         this.str = str;
-        this.dx = dx;
-        this.dy = dy;
-        r = m*10;
+        this.V = V;
+        this.grad = grad;
+        this.m = m;
+        r = (float) (m*3);
         l = r/4;
+        dx = (float) (V*Math.cos(grad));
+        System.out.println(dx);
+        System.out.println(dy);
+        dy = (float) (V*Math.sin(grad));
         gx = (float) (x + dx*l);
         gy = (float) (y + dy*l);
-        this.m = m;
     }
 
     protected void draw(Canvas canvas) {
