@@ -18,11 +18,6 @@
         android:layout_height="wrap_content"
         android:hint="масса шара(m)" />
 
-    <!--<EditText
-        android:id="@+id/Vx"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="скорость по вертикали(Vx)" />-->
 
     <EditText
         android:id="@+id/V"
@@ -35,12 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Градусная мера" />
-
-    <!--<EditText
-        android:id="@+id/Vy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="скорость по горизонтали(Vy)" />-->
 
     <TextView
         android:id="@+id/textView2"
@@ -65,17 +54,6 @@
         android:layout_height="wrap_content"
         android:hint="Градусная мера" />
 
-  <!--  <EditText
-        android:id="@+id/Vx2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="скорость по вертикали(Vx)" />
-
-    <EditText
-        android:id="@+id/Vy2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="скорость по горизонтали(Vy)" />-->
     <Button
         android:id="@+id/start"
         android:onClick="add"

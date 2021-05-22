@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Ball> bl;
-    EditText massa, Vx, Vy, massa2, Vx2, Vy2, V, V2, gr, gr2 ;
+    EditText massa, massa2, V, V2, gr, gr2 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

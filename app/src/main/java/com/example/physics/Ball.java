@@ -29,10 +29,8 @@ public class Ball {
         this.m = m;
         r = (float) (m*3);
         l = r/4;
-        dx = (float) (V*Math.cos(grad));
-        System.out.println(dx);
-        System.out.println(dy);
-        dy = (float) (V*Math.sin(grad));
+        dx = (float) (V*Math.cos(Math.toRadians(grad)));
+        dy = (float) (V*Math.sin( (grad) ));
         gx = (float) (x + dx*l);
         gy = (float) (y + dy*l);
     }
