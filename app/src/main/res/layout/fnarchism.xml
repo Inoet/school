@@ -1,65 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    >
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="339dp"
+        android:layout_marginLeft="339dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:onClick="stop"
+        android:text="stop"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="121dp"
         android:text="Характеристики первого шара" />
 
     <EditText
         android:id="@+id/massa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="5dp"
         android:hint="масса шара(m)" />
-
 
     <EditText
         android:id="@+id/V"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/massa"
+        android:layout_marginTop="1dp"
         android:hint="скорость(V)" />
 
     <EditText
         android:id="@+id/gr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/V"
+        android:layout_marginTop="4dp"
         android:hint="Градусная мера" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:layout_below="@+id/gr"
+        android:layout_marginTop="9dp"
         android:text="Характеристики второго шара" />
+
     <EditText
         android:id="@+id/massa2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/gr"
+        android:layout_marginTop="55dp"
         android:hint="масса шара(m)" />
 
     <EditText
         android:id="@+id/V2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/massa2"
+        android:layout_marginTop="14dp"
         android:hint="скорость(V)" />
 
     <EditText
         android:id="@+id/gr2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/V2"
+        android:layout_marginTop="16dp"
         android:hint="Градусная мера" />
 
     <Button
         android:id="@+id/start"
-        android:onClick="add"
-        android:layout_width="190dp"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginRight="121dp"
+        android:layout_marginBottom="92dp"
+        android:onClick="add"
         android:text="запустить" />
 
 
-</LinearLayout>
+</RelativeLayout>
