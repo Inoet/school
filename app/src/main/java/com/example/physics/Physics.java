@@ -5,18 +5,22 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.CountDownTimer;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
 
+import static com.example.physics.MainActivity.stop;
+
 public class Physics extends View {
     static ArrayList <Ball> bs = new ArrayList<>();
-
+    public static MyT t;
     int viewWidth, viewHeight;
+    boolean touch = false;
 
     public Physics(Context context) {
         super(context);
-        MyT t = new MyT(3456789,6);
+        t = new MyT(3456789,6);
         t.start();
     }
 
@@ -38,7 +42,22 @@ public class Physics extends View {
                 }
             }
     }
-    
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if(touch == false) {
+            t.cancel();
+            touch = true;
+            stop.setVisibility(View.VISIBLE);
+        }
+        else if(touch == true){
+            t.start();
+            touch = false;
+            stop.setVisibility(View.INVISIBLE);
+        }
+        return super.onTouchEvent(event);
+    }
+
     class MyT extends CountDownTimer{
         public MyT(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
